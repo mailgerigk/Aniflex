@@ -1,0 +1,50 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Color
+        x:Key="Shade0"
+        A="255"
+        B="116"
+        G="90"
+        R="82" />
+
+    <Color
+        x:Key="Shade1"
+        A="255"
+        B="169"
+        G="155"
+        R="150" />
+
+    <Color
+        x:Key="Shade2"
+        A="255"
+        B="140"
+        G="118"
+        R="111" />
+
+    <Color
+        x:Key="Shade3"
+        A="255"
+        B="93"
+        G="67"
+        R="59" />
+
+    <Color
+        x:Key="Shade4"
+        A="255"
+        B="74"
+        G="45"
+        R="36" />
+
+    <SolidColorBrush x:Key="WindowBackground" Color="{StaticResource Shade4}" />
+
+    <SolidColorBrush x:Key="LogoForeground" Color="White" />
+
+    <SolidColorBrush x:Key="MenuSelected" Color="{StaticResource Shade0}" />
+
+    <SolidColorBrush x:Key="ControlBackground" Color="{StaticResource Shade0}" />
+    <SolidColorBrush x:Key="ControlBackgroundLigthened" Color="{StaticResource Shade3}" />
+    <SolidColorBrush x:Key="ControlForeground" Color="{StaticResource Shade1}" />
+    <SolidColorBrush x:Key="ControlPreviewForeground" Color="{StaticResource Shade1}" />
+
+
+</ResourceDictionary>

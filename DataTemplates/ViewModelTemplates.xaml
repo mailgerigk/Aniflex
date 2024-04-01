@@ -1,0 +1,45 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:viewModels="clr-namespace:Aniflex.MVVM.ViewModels"
+    xmlns:views="clr-namespace:Aniflex.MVVM.Views">
+    <DataTemplate DataType="{x:Type viewModels:HomeViewModel}">
+        <views:HomeView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModels:WatchingViewModel}">
+        <views:WatchingView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModels:FavoritesViewModel}">
+        <views:FavoritesView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModels:SeasonViewModel}">
+        <views:SeasonView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModels:ShowsViewModel}">
+        <views:ShowsView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModels:DownloadsViewModel}">
+        <views:DownloadsView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModels:LogViewModel}">
+        <views:LogView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModels:AnimeViewModel}">
+        <views:AnimeView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModels:EpisodeViewModel}">
+        <views:EpisodeView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModels:DownloadViewModel}">
+        <views:DownloadView />
+    </DataTemplate>
+</ResourceDictionary>

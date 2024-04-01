@@ -1,0 +1,23 @@
+﻿<Application
+    x:Class="Aniflex.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    ShutdownMode="OnMainWindowClose"
+    StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/Dark.xaml" />
+
+                <ResourceDictionary Source="DataTemplates/LogMessageTemplate.xaml" />
+                <ResourceDictionary Source="DataTemplates/ViewModelTemplates.xaml" />
+                <ResourceDictionary Source="DataTemplates/Card.xaml" />
+
+                <ResourceDictionary Source="Themes/Styles/SearchTextBox.xaml" />
+                <ResourceDictionary Source="Themes/Styles/MenuButton.xaml" />
+                <ResourceDictionary Source="Themes/Styles/ScrollBar.xaml" />
+                <ResourceDictionary Source="Themes/Styles/FavoriteButton.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

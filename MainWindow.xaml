@@ -1,0 +1,104 @@
+﻿<Window
+    x:Class="Aniflex.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Aniflex"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="clr-namespace:Aniflex.MVVM.ViewModels"
+    Width="800"
+    Height="450"
+    d:DataContext="{x:Type viewModel:MainPageViewModel}"
+    AllowsTransparency="True"
+    Background="Transparent"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Window.DataContext>
+        <viewModel:MainPageViewModel />
+    </Window.DataContext>
+
+    <Border
+        Background="{StaticResource WindowBackground}"
+        CornerRadius="10"
+        MouseLeftButtonDown="Border_MouseLeftButtonDown"
+        MouseLeftButtonUp="Border_MouseLeftButtonUp"
+        MouseMove="Border_MouseMove">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="72" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="5*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock
+                Margin="15,0,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                FontSize="22"
+                Foreground="{StaticResource LogoForeground}"
+                Text="Aniflex">
+                <TextBlock.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Command="{Binding ReloadCommand}" Header="Reload without Cache" />
+                        <MenuItem Command="{Binding ExitCommand}" Header="Exit" />
+                    </ContextMenu>
+                </TextBlock.ContextMenu>
+            </TextBlock>
+
+            <TextBox
+                Grid.Column="1"
+                HorizontalAlignment="Left"
+                Style="{StaticResource SearchTextBox}"
+                Text="{Binding SearchText.Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+            <StackPanel Grid.Row="1" Orientation="Vertical">
+                <RadioButton
+                    Command="{Binding HomeCommand}"
+                    Content="Home"
+                    IsChecked="True"
+                    Style="{StaticResource MenuButton}" />
+
+                <RadioButton
+                    Command="{Binding WatchingCommand}"
+                    Content="Watching"
+                    Style="{StaticResource MenuButton}" />
+
+                <RadioButton
+                    Command="{Binding FavoritesCommand}"
+                    Content="Favorites"
+                    Style="{StaticResource MenuButton}" />
+
+                <RadioButton
+                    Command="{Binding SeasonCommand}"
+                    Content="Season"
+                    Style="{StaticResource MenuButton}" />
+
+                <RadioButton
+                    Command="{Binding ShowsCommand}"
+                    Content="Shows"
+                    Style="{StaticResource MenuButton}" />
+
+                <RadioButton
+                    Command="{Binding DownloadsCommand}"
+                    Content="Downloads"
+                    Style="{StaticResource MenuButton}" />
+
+                <RadioButton
+                    Command="{Binding LogCommand}"
+                    Content="Log"
+                    Style="{StaticResource MenuButton}" />
+
+            </StackPanel>
+
+            <ContentControl
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="0,0,15,15"
+                Content="{Binding CurrentView}" />
+        </Grid>
+    </Border>
+</Window>

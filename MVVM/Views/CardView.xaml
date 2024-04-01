@@ -1,0 +1,61 @@
+﻿<UserControl
+    x:Class="Aniflex.MVVM.Views.CardView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Aniflex.MVVM.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="clr-namespace:Aniflex.MVVM.ViewModels"
+    Width="150"
+    Height="250"
+    d:DataContext="{x:Type viewModels:CardViewModel}"
+    mc:Ignorable="d">
+    <Button
+        Margin="5,5,0,0"
+        Background="{StaticResource ControlBackground}"
+        BorderBrush="Transparent"
+        Command="{Binding OpenAnimeWindow}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid Background="{StaticResource ControlBackgroundLigthened}">
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    Foreground="{StaticResource ControlForeground}"
+                    Text="{Binding Anime.Name}"
+                    TextAlignment="Center"
+                    TextWrapping="WrapWithOverflow" />
+            </Grid>
+            <Image
+                Grid.Row="1"
+                Source="{Binding Thumbnail}"
+                Stretch="UniformToFill"
+                StretchDirection="DownOnly" />
+            <Grid Grid.Row="2" Background="{StaticResource ControlBackgroundLigthened}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button
+                    Command="{Binding ToggleFavorite}"
+                    Content="{Binding}"
+                    Style="{StaticResource FavoriteButton}" />
+                <TextBlock
+                    Grid.Column="1"
+                    Margin="-32,0,0,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Background="{StaticResource ControlBackgroundLigthened}"
+                    Foreground="{StaticResource ControlForeground}"
+                    TextAlignment="Center">
+                    <Run Text="{Binding Anime.WatchedEpisodes, Mode=OneWay}" />
+                    <Run Text="/" />
+                    <Run Text="{Binding Anime.TotalEpisodes, Mode=OneWay}" />
+                </TextBlock>
+            </Grid>
+        </Grid>
+    </Button>
+</UserControl>
